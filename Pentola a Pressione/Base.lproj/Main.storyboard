@@ -17,9 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ehQ-cE-z2I">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="gBe-Rd-iYO" id="7Av-VA-cpy"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" textLabel="QHa-8X-VEe" detailTextLabel="klQ-WL-45t" style="IBUITableViewCellStyleValue1" id="QaG-2O-0lm">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QaG-2O-0lm" id="Jjb-Pa-fRF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -50,8 +58,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tempi di cottura" id="wkd-DU-uBd"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ehQ-cE-z2I" id="1TQ-Sf-4Eg"/>
+                        <outlet property="searchDisplayController" destination="Tzu-sD-gXG" id="A3Y-q0-hP9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1p-MN-6lf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Tzu-sD-gXG">
+                    <connections>
+                        <outlet property="delegate" destination="gBe-Rd-iYO" id="1nB-gr-WQA"/>
+                        <outlet property="searchContentsController" destination="gBe-Rd-iYO" id="xXO-Uq-wmb"/>
+                        <outlet property="searchResultsDataSource" destination="gBe-Rd-iYO" id="jKL-FM-7lf"/>
+                        <outlet property="searchResultsDelegate" destination="gBe-Rd-iYO" id="A8P-me-i8m"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1247.2" y="137.18140929535232"/>
         </scene>

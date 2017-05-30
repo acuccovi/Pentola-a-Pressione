@@ -8,24 +8,29 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
 
     private let tableItemController = TableItemController.shared
+    private var data = [String : [TableItem]]()
 
     // MARK: - UIViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
+        data = tableItemController.getData()
     }
 
     // MARK: - UITableViewDataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableItemController.getSections().count
+        return data.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionName = tableItemController.getSections()[section]
-        return tableItemController.getData()[sectionName]!.count;
+        let sectionName = data.keys.sorted()[section]
+        return data[sectionName]!.count
     }
+
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return tableItemController.getSections()[section]
@@ -33,11 +38,11 @@ class ViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-            return tableView.dequeueReusableCell(withIdentifier: "searchCell")!
+            return UITableViewCell()
         }
 
         let sectionName = tableItemController.getSections()[indexPath.section]
-        let rows = tableItemController.getData()[sectionName]
+        let rows = data[sectionName]
 
         if let row = rows?[indexPath.row] {
             cell.textLabel?.text = row.title
@@ -52,4 +57,15 @@ class ViewController: UITableViewController {
         }
         return cell
     }
+
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let text = searchBar.text {
+            data = tableItemController.getData(text)
+        } else {
+            data = tableItemController.getData()
+        }
+        tableView.reloadData()
+    }
+    
 }

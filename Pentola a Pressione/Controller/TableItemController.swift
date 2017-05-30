@@ -152,8 +152,6 @@ class TableItemController: NSObject {
             TableItem(withTitle: "Zucca a pezzi", minTime: 4, maxTime: 5),
             TableItem(withTitle: "Zucchini", minTime: 2, maxTime: 3),
         ]
-
-        filteredData = originalData
     }
 
     public func getSections() -> [String] {
@@ -161,6 +159,23 @@ class TableItemController: NSObject {
     }
 
     public func getData() -> [String : [TableItem]] {
+        return originalData
+    }
+
+    public func getData(_ searchString: String) -> [String : [TableItem]] {
+        if(searchString == "") {
+            filteredData = originalData
+        } else {
+            filteredData.removeAll()
+            for key in getSections() {
+                if let values = originalData[key] {
+                    let vals = values.filter({ $0.title.lowercased().contains(searchString.lowercased()) })
+                    if vals.count > 0 {
+                        filteredData[key] = vals
+                    }
+                }
+            }
+        }
         return filteredData
     }
     
