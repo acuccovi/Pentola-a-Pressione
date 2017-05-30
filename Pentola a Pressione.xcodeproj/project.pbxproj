@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F523D1EDC42EE0056A5EA /* TableItem.swift */; };
+		CA7F52421EDC47400056A5EA /* TableItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F52411EDC47400056A5EA /* TableItemController.swift */; };
 		CA9222211ED634E80011C3A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9222201ED634E80011C3A1 /* AppDelegate.swift */; };
 		CA9222231ED634E80011C3A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9222221ED634E80011C3A1 /* ViewController.swift */; };
 		CA9222261ED634E80011C3A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9222241ED634E80011C3A1 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA7F523D1EDC42EE0056A5EA /* TableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItem.swift; path = Model/TableItem.swift; sourceTree = "<group>"; };
+		CA7F52411EDC47400056A5EA /* TableItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItemController.swift; path = Controller/TableItemController.swift; sourceTree = "<group>"; };
 		CA92221D1ED634E80011C3A1 /* Pentola a Pressione.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pentola a Pressione.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9222201ED634E80011C3A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9222221ED634E80011C3A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA7F523C1EDC42BA0056A5EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA7F523D1EDC42EE0056A5EA /* TableItem.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CA7F52401EDC472A0056A5EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA7F52411EDC47400056A5EA /* TableItemController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		CA9222141ED634E80011C3A1 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +76,8 @@
 		CA92221F1ED634E80011C3A1 /* Pentola a Pressione */ = {
 			isa = PBXGroup;
 			children = (
+				CA7F52401EDC472A0056A5EA /* Controller */,
+				CA7F523C1EDC42BA0056A5EA /* Model */,
 				CA9222201ED634E80011C3A1 /* AppDelegate.swift */,
 				CA9222221ED634E80011C3A1 /* ViewController.swift */,
 				CA9222241ED634E80011C3A1 /* Main.storyboard */,
@@ -141,6 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9222291ED634E80011C3A1 /* Pentola_a_Pressione.xcdatamodeld in Sources */,
+				CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */,
+				CA7F52421EDC47400056A5EA /* TableItemController.swift in Sources */,
 				CA9222231ED634E80011C3A1 /* ViewController.swift in Sources */,
 				CA9222211ED634E80011C3A1 /* AppDelegate.swift in Sources */,
 			);
@@ -273,6 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cuccovillo.alessio.Pentola-a-Pressione";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -286,6 +311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cuccovillo.alessio.Pentola-a-Pressione";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -308,6 +334,7 @@
 				CA9222341ED634E80011C3A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
