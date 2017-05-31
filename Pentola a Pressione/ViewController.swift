@@ -63,5 +63,12 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         data = tableItemController.getData(searchText)
         tableView.reloadData()
     }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        data = tableItemController.getData("")
+        tableView.reloadData()
+    }
     
 }
