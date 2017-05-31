@@ -79,8 +79,8 @@
 				CA9222201ED634E80011C3A1 /* AppDelegate.swift */,
 				CA9222221ED634E80011C3A1 /* ViewController.swift */,
 				CA9222241ED634E80011C3A1 /* Main.storyboard */,
-				CA92222A1ED634E80011C3A1 /* Assets.xcassets */,
 				CA92222C1ED634E80011C3A1 /* LaunchScreen.storyboard */,
+				CA92222A1ED634E80011C3A1 /* Assets.xcassets */,
 				CA92222F1ED634E80011C3A1 /* Info.plist */,
 			);
 			path = "Pentola a Pressione";
