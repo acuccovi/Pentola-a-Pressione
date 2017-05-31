@@ -155,11 +155,12 @@ class TableItemController: NSObject {
     }
 
     public func getSections() -> [String] {
-        return getData().keys.sorted()
+        return filteredData.keys.sorted()
     }
 
     public func getData() -> [String : [TableItem]] {
-        return originalData
+        filteredData = originalData
+        return filteredData
     }
 
     public func getData(_ searchString: String) -> [String : [TableItem]] {
@@ -167,7 +168,7 @@ class TableItemController: NSObject {
             filteredData = originalData
         } else {
             filteredData.removeAll()
-            for key in getSections() {
+            for key in originalData.keys {
                 if let values = originalData[key] {
                     let vals = values.filter({ $0.title.lowercased().contains(searchString.lowercased()) })
                     if vals.count > 0 {

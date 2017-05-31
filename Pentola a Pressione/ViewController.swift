@@ -23,11 +23,11 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     // MARK: - UITableViewDataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return data.keys.count
+        return tableItemController.getSections().count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionName = data.keys.sorted()[section]
+        let sectionName = tableItemController.getSections()[section]
         return data[sectionName]!.count
     }
 
