@@ -9,9 +9,12 @@
 import UIKit
 
 class TableItemController: NSObject {
+    //original data holding all the categories/products available
     private var originalData = [String : [TableItem]]()
+    //filtered data containing: all data or the result of the user search
     private var filteredData = [String : [TableItem]]()
 
+    //singleton, we need only one instance of TableItemController
     static let shared: TableItemController = {
         return TableItemController()
     }()
@@ -152,25 +155,31 @@ class TableItemController: NSObject {
             TableItem(withTitle: "Zucca a pezzi", minTime: 4, maxTime: 5),
             TableItem(withTitle: "Zucchini", minTime: 2, maxTime: 3),
         ]
+
+        //filtered data starts with all data
+        filteredData = originalData
     }
 
+    //returns the available categories, no matter if user has already serached for something or not
     public func getSections() -> [String] {
         return filteredData.keys.sorted()
     }
 
-    public func getData() -> [String : [TableItem]] {
-        filteredData = originalData
-        return filteredData
-    }
-
+    //returns the data, we do matter if the user is searching for something or not
     public func getData(_ searchString: String) -> [String : [TableItem]] {
+        //if no query issued return all the data
         if(searchString == "") {
             filteredData = originalData
         } else {
+            //clear the filtered data
             filteredData.removeAll()
+
+            //for each category
             for key in originalData.keys {
                 if let values = originalData[key] {
+                    //search the product that contains the searched string in the name field
                     let vals = values.filter({ $0.title.lowercased().contains(searchString.lowercased()) })
+                    //if something is found it's added to the filteredData dictionary
                     if vals.count > 0 {
                         filteredData[key] = vals
                     }

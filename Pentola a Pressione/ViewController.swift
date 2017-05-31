@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UITableViewController, UISearchBarDelegate {
-    
+
     @IBOutlet weak var searchBar: UISearchBar!
 
     private let tableItemController = TableItemController.shared
@@ -18,7 +18,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - UIViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = tableItemController.getData()
+        data = tableItemController.getData("")
     }
 
     // MARK: - UITableViewDataSource
@@ -58,13 +58,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
 
-
+    // MARK: - UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if let text = searchBar.text {
-            data = tableItemController.getData(text)
-        } else {
-            data = tableItemController.getData()
-        }
+        data = tableItemController.getData(searchText)
         tableView.reloadData()
     }
     
