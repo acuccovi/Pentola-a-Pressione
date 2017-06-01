@@ -20,7 +20,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         data = tableItemController.getData("")
         tableView.reloadData()
-        hideSearchBar()
+        hideSearchBar(false)
     }
 
     // MARK: - UITableViewDataSource
@@ -61,8 +61,8 @@ class ViewController: UITableViewController {
     }
 
     // MARK: - Utility
-    fileprivate func hideSearchBar() {
-        tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
+    fileprivate func hideSearchBar(_ animated: Bool) {
+        tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableViewScrollPosition.top, animated: animated)
     }
 
 }
@@ -78,7 +78,7 @@ extension ViewController: UISearchBarDelegate {
         searchBar.text = ""
         searchBar.resignFirstResponder()
         self.searchBar(searchBar, textDidChange: "")
-        hideSearchBar()
+        hideSearchBar(true)
     }
     
 }
