@@ -8,17 +8,19 @@
 
 import UIKit
 
-class ViewController: UITableViewController, UISearchBarDelegate {
+class ViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
 
-    private let tableItemController = TableItemController.shared
-    private var data = [String : [TableItem]]()
+    fileprivate let tableItemController = TableItemController.shared
+    fileprivate var data = [String : [TableItem]]()
 
     // MARK: - UIViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         data = tableItemController.getData("")
+        tableView.reloadData()
+        hideSearchBar()
     }
 
     // MARK: - UITableViewDataSource
@@ -58,7 +60,15 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
 
-    // MARK: - UISearchBarDelegate
+    // MARK: - Utility
+    fileprivate func hideSearchBar() {
+        tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
+    }
+
+}
+
+// MARK: - UISearchBarDelegate
+extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         data = tableItemController.getData(searchText)
         tableView.reloadData()
@@ -67,8 +77,8 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        data = tableItemController.getData("")
-        tableView.reloadData()
+        self.searchBar(searchBar, textDidChange: "")
+        hideSearchBar()
     }
     
 }
