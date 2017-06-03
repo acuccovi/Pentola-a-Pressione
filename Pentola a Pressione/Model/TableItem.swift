@@ -13,15 +13,13 @@ class TableItem: NSObject {
     let minTime: Int
     let maxTime: Int?
 
-    init(withTitle title: String, minTime: Int, maxTime: Int) {
+    init(withTitle title: String, minTime: Int, maxTime: Int?) {
         self.title = title
         self.minTime = minTime
         self.maxTime = maxTime
     }
 
-    init(withTitle title: String, minTime: Int) {
-        self.title = title
-        self.minTime = minTime
-        self.maxTime = nil
+    convenience init(withTitle title: String, minTime: Int) {
+        self.init(withTitle: title, minTime: minTime, maxTime: nil)
     }
 }
