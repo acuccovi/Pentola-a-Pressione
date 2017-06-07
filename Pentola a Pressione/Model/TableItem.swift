@@ -22,4 +22,15 @@ class TableItem: NSObject {
     convenience init(withTitle title: String, minTime: Int) {
         self.init(withTitle: title, minTime: minTime, maxTime: nil)
     }
+
+    func toString() -> String {
+        var string: String
+        if let maxTime = maxTime {
+            string = "\(minTime) - \(maxTime)"
+        } else {
+            string = "\(minTime)"
+        }
+        string = "\(string) minuti"
+        return string
+    }
 }

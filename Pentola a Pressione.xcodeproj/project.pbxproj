@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA73DD001EE36B8B00821300 /* ACCountDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */; };
+		CA73DD021EE3737D00821300 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DD011EE3737D00821300 /* DetailsViewController.swift */; };
 		CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F523D1EDC42EE0056A5EA /* TableItem.swift */; };
 		CA7F52421EDC47400056A5EA /* TableItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F52411EDC47400056A5EA /* TableItemController.swift */; };
 		CA9222211ED634E80011C3A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9222201ED634E80011C3A1 /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ACCountDownLabel.swift; path = UI/ACCountDownLabel.swift; sourceTree = "<group>"; };
+		CA73DD011EE3737D00821300 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		CA7F523D1EDC42EE0056A5EA /* TableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItem.swift; path = Model/TableItem.swift; sourceTree = "<group>"; };
 		CA7F52411EDC47400056A5EA /* TableItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItemController.swift; path = Controller/TableItemController.swift; sourceTree = "<group>"; };
 		CA92221D1ED634E80011C3A1 /* Pentola a Pressione.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pentola a Pressione.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA73DCFE1EE36B4A00821300 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		CA7F523C1EDC42BA0056A5EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,10 +86,12 @@
 		CA92221F1ED634E80011C3A1 /* Pentola a Pressione */ = {
 			isa = PBXGroup;
 			children = (
+				CA73DCFE1EE36B4A00821300 /* UI */,
 				CA7F52401EDC472A0056A5EA /* Controller */,
 				CA7F523C1EDC42BA0056A5EA /* Model */,
 				CA9222201ED634E80011C3A1 /* AppDelegate.swift */,
 				CA9222221ED634E80011C3A1 /* ViewController.swift */,
+				CA73DD011EE3737D00821300 /* DetailsViewController.swift */,
 				CA9222241ED634E80011C3A1 /* Main.storyboard */,
 				CA92222C1ED634E80011C3A1 /* LaunchScreen.storyboard */,
 				CA92222A1ED634E80011C3A1 /* Assets.xcassets */,
@@ -162,7 +176,9 @@
 				CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */,
 				CA7F52421EDC47400056A5EA /* TableItemController.swift in Sources */,
 				CA9222231ED634E80011C3A1 /* ViewController.swift in Sources */,
+				CA73DD001EE36B8B00821300 /* ACCountDownLabel.swift in Sources */,
 				CA9222211ED634E80011C3A1 /* AppDelegate.swift in Sources */,
+				CA73DD021EE3737D00821300 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
