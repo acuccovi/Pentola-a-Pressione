@@ -21,8 +21,7 @@ class TableItemController: NSObject {
 
     private override init() {
         originalData["Arrosti vari"] = [
-            //TableItem(withTitle: "Agnello", minTime: 18, maxTime: 22),
-            TableItem(withTitle: "Agnello", minTime: 1),
+            TableItem(withTitle: "Agnello", minTime: 18, maxTime: 22),
             TableItem(withTitle: "Anatra", minTime: 20, maxTime: 25),
             TableItem(withTitle: "Capretto", minTime: 18, maxTime: 22),
             TableItem(withTitle: "Coniglio", minTime: 15, maxTime: 18),

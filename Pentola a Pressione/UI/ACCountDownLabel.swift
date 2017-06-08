@@ -11,6 +11,7 @@ import UIKit
 protocol ACCountDownLabelDelegate {
     func ACCountDownFinished()
 }
+
 class ACCountDownLabel: UILabel {
 
     private var timer = Timer()
