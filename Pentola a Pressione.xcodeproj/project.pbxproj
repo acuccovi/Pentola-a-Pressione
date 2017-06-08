@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA5D2BFD1EEA05380073E7F6 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = CA5D2BFC1EEA05380073E7F6 /* Audio */; };
 		CA73DD001EE36B8B00821300 /* ACCountDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */; };
 		CA73DD021EE3737D00821300 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DD011EE3737D00821300 /* DetailsViewController.swift */; };
 		CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F523D1EDC42EE0056A5EA /* TableItem.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA5D2BFC1EEA05380073E7F6 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ACCountDownLabel.swift; path = UI/ACCountDownLabel.swift; sourceTree = "<group>"; };
 		CA73DD011EE3737D00821300 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		CA7F523D1EDC42EE0056A5EA /* TableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItem.swift; path = Model/TableItem.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		CA92221F1ED634E80011C3A1 /* Pentola a Pressione */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D2BFC1EEA05380073E7F6 /* Audio */,
 				CA73DCFE1EE36B4A00821300 /* UI */,
 				CA7F52401EDC472A0056A5EA /* Controller */,
 				CA7F523C1EDC42BA0056A5EA /* Model */,
@@ -163,6 +166,7 @@
 				CA92222E1ED634E80011C3A1 /* LaunchScreen.storyboard in Resources */,
 				CA92222B1ED634E80011C3A1 /* Assets.xcassets in Resources */,
 				CA9222261ED634E80011C3A1 /* Main.storyboard in Resources */,
+				CA5D2BFD1EEA05380073E7F6 /* Audio in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
