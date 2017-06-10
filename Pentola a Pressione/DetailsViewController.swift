@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DetailsViewController: UIViewController {
 
@@ -85,8 +86,12 @@ extension DetailsViewController: ACCountDownLabelDelegate {
 
     func ACCountDownFinished() {
         stop()
+
+        AudioPlayerController.shared.play()
+
         let alert = UIAlertController(title: "È pronto!", message: "Spegni il fuoco sotto la\nPentola a Pressione!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay! 😋", style: .default, handler: { _ in
+            AudioPlayerController.shared.stop()
             self.navigationController?.popViewController(animated: true)
         }))
         self.present(alert, animated: true, completion: nil)

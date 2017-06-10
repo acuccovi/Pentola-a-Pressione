@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KZm-6P-J5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KZm-6P-J5n">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,7 +64,13 @@
                             <outlet property="delegate" destination="gBe-Rd-iYO" id="oqv-1r-fwo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tempi di cottura" id="wkd-DU-uBd"/>
+                    <navigationItem key="navigationItem" title="Tempi di cottura" id="wkd-DU-uBd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="9As-29-ZTQ">
+                            <connections>
+                                <segue destination="gLv-9Y-ygB" kind="show" id="xbC-XB-PAf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="ehQ-cE-z2I" id="1TQ-Sf-4Eg"/>
                     </connections>
@@ -127,12 +133,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhH-pt-fVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2077.5" y="136.26760563380282"/>
+            <point key="canvasLocation" x="2059" y="-167"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tempi di cottura-->
         <scene sceneID="RP0-ra-9qh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KZm-6P-J5n" sceneMemberID="viewController">
+                <navigationController title="Tempi di cottura" automaticallyAdjustsScrollViewInsets="NO" id="KZm-6P-J5n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="PIv-m3-77F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vLc-DZ-E1R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -146,6 +153,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7k-dJ-vt0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="308" y="137.18140929535232"/>
+        </scene>
+        <!--Impostazioni-->
+        <scene sceneID="ejF-9x-AMA">
+            <objects>
+                <tableViewController title="Impostazioni" id="gLv-9Y-ygB" customClass="SettingsViewController" customModule="Pentola_a_Pressione" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="txG-ur-sCK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="yJ5-oh-0iR">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yJ5-oh-0iR" id="Zcn-Gb-wWt">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gLv-9Y-ygB" id="cbI-0w-H86"/>
+                            <outlet property="delegate" destination="gLv-9Y-ygB" id="Tnn-t7-VyB"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="nDb-AG-DfF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43N-oe-K2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2059" y="486"/>
         </scene>
     </scenes>
 </document>

@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA129E9D1EEBEE3F0024C37E /* UserDefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA129E9C1EEBEE3F0024C37E /* UserDefaultsController.swift */; };
 		CA5D2BFD1EEA05380073E7F6 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = CA5D2BFC1EEA05380073E7F6 /* Audio */; };
+		CA5D2BFF1EEA05A00073E7F6 /* AudioPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D2BFE1EEA05A00073E7F6 /* AudioPlayerController.swift */; };
+		CA5D2C011EEB597E0073E7F6 /* AudioFileTableItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D2C001EEB597E0073E7F6 /* AudioFileTableItemController.swift */; };
+		CA5D2C031EEB598A0073E7F6 /* AudioFileTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D2C021EEB598A0073E7F6 /* AudioFileTableItem.swift */; };
+		CA5D2C051EEB60A70073E7F6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D2C041EEB60A70073E7F6 /* SettingsViewController.swift */; };
 		CA73DD001EE36B8B00821300 /* ACCountDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */; };
 		CA73DD021EE3737D00821300 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DD011EE3737D00821300 /* DetailsViewController.swift */; };
 		CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F523D1EDC42EE0056A5EA /* TableItem.swift */; };
@@ -20,7 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA129E9C1EEBEE3F0024C37E /* UserDefaultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsController.swift; path = Controller/UserDefaultsController.swift; sourceTree = "<group>"; };
 		CA5D2BFC1EEA05380073E7F6 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
+		CA5D2BFE1EEA05A00073E7F6 /* AudioPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioPlayerController.swift; path = Controller/AudioPlayerController.swift; sourceTree = "<group>"; };
+		CA5D2C001EEB597E0073E7F6 /* AudioFileTableItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioFileTableItemController.swift; path = Controller/AudioFileTableItemController.swift; sourceTree = "<group>"; };
+		CA5D2C021EEB598A0073E7F6 /* AudioFileTableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioFileTableItem.swift; path = Model/AudioFileTableItem.swift; sourceTree = "<group>"; };
+		CA5D2C041EEB60A70073E7F6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ACCountDownLabel.swift; path = UI/ACCountDownLabel.swift; sourceTree = "<group>"; };
 		CA73DD011EE3737D00821300 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		CA7F523D1EDC42EE0056A5EA /* TableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItem.swift; path = Model/TableItem.swift; sourceTree = "<group>"; };
@@ -56,6 +66,7 @@
 		CA7F523C1EDC42BA0056A5EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D2C021EEB598A0073E7F6 /* AudioFileTableItem.swift */,
 				CA7F523D1EDC42EE0056A5EA /* TableItem.swift */,
 			);
 			name = Model;
@@ -64,7 +75,10 @@
 		CA7F52401EDC472A0056A5EA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D2C001EEB597E0073E7F6 /* AudioFileTableItemController.swift */,
 				CA7F52411EDC47400056A5EA /* TableItemController.swift */,
+				CA5D2BFE1EEA05A00073E7F6 /* AudioPlayerController.swift */,
+				CA129E9C1EEBEE3F0024C37E /* UserDefaultsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -95,6 +109,7 @@
 				CA9222201ED634E80011C3A1 /* AppDelegate.swift */,
 				CA9222221ED634E80011C3A1 /* ViewController.swift */,
 				CA73DD011EE3737D00821300 /* DetailsViewController.swift */,
+				CA5D2C041EEB60A70073E7F6 /* SettingsViewController.swift */,
 				CA9222241ED634E80011C3A1 /* Main.storyboard */,
 				CA92222C1ED634E80011C3A1 /* LaunchScreen.storyboard */,
 				CA92222A1ED634E80011C3A1 /* Assets.xcassets */,
@@ -178,11 +193,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */,
+				CA129E9D1EEBEE3F0024C37E /* UserDefaultsController.swift in Sources */,
+				CA5D2BFF1EEA05A00073E7F6 /* AudioPlayerController.swift in Sources */,
+				CA5D2C011EEB597E0073E7F6 /* AudioFileTableItemController.swift in Sources */,
+				CA5D2C051EEB60A70073E7F6 /* SettingsViewController.swift in Sources */,
 				CA7F52421EDC47400056A5EA /* TableItemController.swift in Sources */,
 				CA9222231ED634E80011C3A1 /* ViewController.swift in Sources */,
 				CA73DD001EE36B8B00821300 /* ACCountDownLabel.swift in Sources */,
 				CA9222211ED634E80011C3A1 /* AppDelegate.swift in Sources */,
 				CA73DD021EE3737D00821300 /* DetailsViewController.swift in Sources */,
+				CA5D2C031EEB598A0073E7F6 /* AudioFileTableItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

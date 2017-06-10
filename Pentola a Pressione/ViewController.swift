@@ -29,7 +29,11 @@ class ViewController: UITableViewController {
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return selectedItem != nil
+        var result = true
+        if identifier == "timerSegue" {
+            result = selectedItem != nil
+        }
+        return result
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
