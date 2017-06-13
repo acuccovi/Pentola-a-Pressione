@@ -24,11 +24,11 @@ class AudioPlayerController: NSObject {
         baseURL = URL(fileURLWithPath: Bundle.main.resourcePath!)
     }
 
+    // MARK: - utilities
     private func isAudio(_ file: URL) -> Bool {
         var result: Bool = false
         do {
-            let resourceValueKeysSet : Set<URLResourceKey> = [URLResourceKey.isRegularFileKey, URLResourceKey.typeIdentifierKey]
-            let resourceValues: URLResourceValues = try file.resourceValues(forKeys: resourceValueKeysSet)
+            let resourceValues = try file.resourceValues(forKeys: [URLResourceKey.isRegularFileKey, URLResourceKey.typeIdentifierKey])
             if resourceValues.isRegularFile! && UTTypeConformsTo(resourceValues.typeIdentifier! as CFString, "public.audio" as CFString) {
                 result = true
             }
@@ -38,10 +38,7 @@ class AudioPlayerController: NSObject {
     }
 
 
-    public func setAudioFile(_ audioFile: String) {
-        avPlayer = AVPlayer(url: baseURL.appendingPathComponent(audioFile))
-    }
-
+    // MARK: - public func
     public func setAudioUrl(_ audioUrl: URL) {
         avPlayer = AVPlayer(url: audioUrl)
     }
