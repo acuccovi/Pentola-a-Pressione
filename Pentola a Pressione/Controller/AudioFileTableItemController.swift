@@ -12,7 +12,7 @@ class AudioFileTableItemController: NSObject {
     //holds all the AudioFile
     private(set) var audioFiles = [AudioFileTableItem]()
 
-    //singleton, we need only one instance of TableItemController
+    //singleton, we need only one instance of AudioFileTableItemController
     static let shared: AudioFileTableItemController = {
         return AudioFileTableItemController()
     }()

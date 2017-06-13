@@ -12,14 +12,14 @@ class ViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
 
-    fileprivate let tableItemController = TableItemController.shared
-    fileprivate var data = [String : [TableItem]]()
-    fileprivate var selectedItem: TableItem?
+    fileprivate let productTableItemController = ProductTableItemController.shared
+    fileprivate var data = [String : [ProductTableItem]]()
+    fileprivate var selectedItem: ProductTableItem?
 
     // MARK: - UIViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = tableItemController.getData("")
+        data = productTableItemController.getData("")
         tableView.reloadData()
         hideSearchBar(false)
     }
@@ -44,17 +44,17 @@ class ViewController: UITableViewController {
 
     // MARK: - UITableViewDataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableItemController.getSections().count
+        return productTableItemController.getSections().count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionName = tableItemController.getSections()[section]
+        let sectionName = productTableItemController.getSections()[section]
         return data[sectionName]!.count
     }
 
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return tableItemController.getSections()[section]
+        return productTableItemController.getSections()[section]
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,8 +82,8 @@ class ViewController: UITableViewController {
         tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: UITableViewScrollPosition.top, animated: animated)
     }
 
-    fileprivate func getItem(_ indexPath: IndexPath) -> TableItem? {
-        let sectionName = tableItemController.getSections()[indexPath.section]
+    fileprivate func getItem(_ indexPath: IndexPath) -> ProductTableItem? {
+        let sectionName = productTableItemController.getSections()[indexPath.section]
         let rows = data[sectionName]
         return rows?[indexPath.row]
     }
@@ -93,7 +93,7 @@ class ViewController: UITableViewController {
 // MARK: - UISearchBarDelegate
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        data = tableItemController.getData(searchText)
+        data = productTableItemController.getData(searchText)
         tableView.reloadData()
     }
 

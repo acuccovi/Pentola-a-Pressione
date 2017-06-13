@@ -15,8 +15,8 @@
 		CA5D2C051EEB60A70073E7F6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D2C041EEB60A70073E7F6 /* SettingsViewController.swift */; };
 		CA73DD001EE36B8B00821300 /* ACCountDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */; };
 		CA73DD021EE3737D00821300 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73DD011EE3737D00821300 /* DetailsViewController.swift */; };
-		CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F523D1EDC42EE0056A5EA /* TableItem.swift */; };
-		CA7F52421EDC47400056A5EA /* TableItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F52411EDC47400056A5EA /* TableItemController.swift */; };
+		CA7F523E1EDC42EE0056A5EA /* ProductTableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F523D1EDC42EE0056A5EA /* ProductTableItem.swift */; };
+		CA7F52421EDC47400056A5EA /* ProductTableItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F52411EDC47400056A5EA /* ProductTableItemController.swift */; };
 		CA9222211ED634E80011C3A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9222201ED634E80011C3A1 /* AppDelegate.swift */; };
 		CA9222231ED634E80011C3A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9222221ED634E80011C3A1 /* ViewController.swift */; };
 		CA9222261ED634E80011C3A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9222241ED634E80011C3A1 /* Main.storyboard */; };
@@ -33,8 +33,8 @@
 		CA5D2C041EEB60A70073E7F6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CA73DCFF1EE36B8B00821300 /* ACCountDownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ACCountDownLabel.swift; path = UI/ACCountDownLabel.swift; sourceTree = "<group>"; };
 		CA73DD011EE3737D00821300 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		CA7F523D1EDC42EE0056A5EA /* TableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItem.swift; path = Model/TableItem.swift; sourceTree = "<group>"; };
-		CA7F52411EDC47400056A5EA /* TableItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableItemController.swift; path = Controller/TableItemController.swift; sourceTree = "<group>"; };
+		CA7F523D1EDC42EE0056A5EA /* ProductTableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableItem.swift; path = Model/ProductTableItem.swift; sourceTree = "<group>"; };
+		CA7F52411EDC47400056A5EA /* ProductTableItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableItemController.swift; path = Controller/ProductTableItemController.swift; sourceTree = "<group>"; };
 		CA92221D1ED634E80011C3A1 /* Pentola a Pressione.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pentola a Pressione.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9222201ED634E80011C3A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9222221ED634E80011C3A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				CA5D2C021EEB598A0073E7F6 /* AudioFileTableItem.swift */,
-				CA7F523D1EDC42EE0056A5EA /* TableItem.swift */,
+				CA7F523D1EDC42EE0056A5EA /* ProductTableItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				CA5D2C001EEB597E0073E7F6 /* AudioFileTableItemController.swift */,
-				CA7F52411EDC47400056A5EA /* TableItemController.swift */,
+				CA7F52411EDC47400056A5EA /* ProductTableItemController.swift */,
 				CA5D2BFE1EEA05A00073E7F6 /* AudioPlayerController.swift */,
 				CA129E9C1EEBEE3F0024C37E /* UserDefaultsController.swift */,
 			);
@@ -192,12 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA7F523E1EDC42EE0056A5EA /* TableItem.swift in Sources */,
+				CA7F523E1EDC42EE0056A5EA /* ProductTableItem.swift in Sources */,
 				CA129E9D1EEBEE3F0024C37E /* UserDefaultsController.swift in Sources */,
 				CA5D2BFF1EEA05A00073E7F6 /* AudioPlayerController.swift in Sources */,
 				CA5D2C011EEB597E0073E7F6 /* AudioFileTableItemController.swift in Sources */,
 				CA5D2C051EEB60A70073E7F6 /* SettingsViewController.swift in Sources */,
-				CA7F52421EDC47400056A5EA /* TableItemController.swift in Sources */,
+				CA7F52421EDC47400056A5EA /* ProductTableItemController.swift in Sources */,
 				CA9222231ED634E80011C3A1 /* ViewController.swift in Sources */,
 				CA73DD001EE36B8B00821300 /* ACCountDownLabel.swift in Sources */,
 				CA9222211ED634E80011C3A1 /* AppDelegate.swift in Sources */,

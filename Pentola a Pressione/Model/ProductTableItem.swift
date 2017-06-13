@@ -1,5 +1,5 @@
 //
-//  TableItem.swift
+//  ProductTableItem.swift
 //  Pentola a Pressione
 //
 //  Created by Alessio Cuccovillo on 29/05/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableItem: NSObject {
+class ProductTableItem: NSObject {
     let title: String
     let minTime: Int
     let maxTime: Int?

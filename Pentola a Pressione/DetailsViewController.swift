@@ -16,7 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var startStop: UIButton!
 
-    private var model: TableItem?
+    private var model: ProductTableItem?
     private var timerStarted = false
     private var shouldEnableSlider = true
 
@@ -58,7 +58,7 @@ class DetailsViewController: UIViewController {
     }
 
     // MARK: - Utility
-    func setModel(_ model: TableItem) {
+    func setModel(_ model: ProductTableItem) {
         self.model = model
     }
 
