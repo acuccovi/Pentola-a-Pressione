@@ -43,9 +43,7 @@ class AudioPlayerController: NSObject {
 
     public func getAudioFiles() -> [URL] {
         var files = [URL]()
-        FileManager.default.enumerator(at: Bundle.main.resourceURL!, includingPropertiesForKeys: nil, options: .skipsHiddenFiles) { (url, error) -> Bool in
-            return true
-        }?.forEach({ (url) in
+        FileManager.default.enumerator(at: Bundle.main.resourceURL!, includingPropertiesForKeys: nil, options: .skipsHiddenFiles, errorHandler: nil)?.forEach({ (url) in
             if let url = url as? URL, isAudio(url) {
                 files.append(url)
             }

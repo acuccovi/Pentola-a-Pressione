@@ -24,7 +24,13 @@ class UserDefaultsController: NSObject {
     }
 
     public func getAudioFile() -> URL {
-        return userDefaults.url(forKey: "audioFile") ?? AudioPlayerController.shared.getAudioFiles().first!
+        let audioFile: URL
+        if let audioFile1 = userDefaults.url(forKey: "audioFile") {
+            audioFile = audioFile1
+        } else {
+            audioFile = AudioPlayerController.shared.getAudioFiles().first!
+        }
+        return audioFile
     }
 
 }
