@@ -13,7 +13,6 @@ import MobileCoreServices
 class AudioPlayerController: NSObject {
 
     private var avPlayer = AVPlayer()
-    private let baseURL : URL
 
     //singleton, we need only one instance of AudioPlayerController
     static let shared: AudioPlayerController = {
@@ -21,7 +20,6 @@ class AudioPlayerController: NSObject {
     }()
 
     private override init() {
-        baseURL = URL(fileURLWithPath: Bundle.main.resourcePath!)
     }
 
     // MARK: - utilities
@@ -45,7 +43,7 @@ class AudioPlayerController: NSObject {
 
     public func getAudioFiles() -> [URL] {
         var files = [URL]()
-        FileManager.default.enumerator(at: baseURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles) { (url, error) -> Bool in
+        FileManager.default.enumerator(at: Bundle.main.resourceURL!, includingPropertiesForKeys: nil, options: .skipsHiddenFiles) { (url, error) -> Bool in
             return true
         }?.forEach({ (url) in
             if let url = url as? URL, isAudio(url) {
