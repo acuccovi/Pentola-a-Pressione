@@ -12,9 +12,9 @@ import AVFoundation
 class DetailsViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet private weak var label: ACCountDownLabel!
+    @IBOutlet private(set) weak var label: ACCountDownLabel!
     @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var startStop: UIButton!
+    @IBOutlet weak var startStopButton: UIButton!
 
     private var model: ProductTableItem?
     private var timerStarted = false
@@ -53,8 +53,8 @@ class DetailsViewController: UIViewController {
         setLabelValue()
     }
 
-    @IBAction func startStopTapped(_ sender: UIButton, forEvent event: UIEvent) {
-        stop()
+    @IBAction func startStopButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
+        startStop()
     }
 
     // MARK: - Utility
@@ -62,11 +62,11 @@ class DetailsViewController: UIViewController {
         self.model = model
     }
 
-    private func setLabelValue() {
+    fileprivate func setLabelValue() {
         label.setTimeLabel(seconds: Int(slider.value) * 60)
     }
 
-    fileprivate func stop() {
+    fileprivate func startStop() {
         var buttonTitle: String
         if timerStarted {
             buttonTitle = "Start"
@@ -75,7 +75,7 @@ class DetailsViewController: UIViewController {
             buttonTitle = "Stop"
             label.start()
         }
-        startStop.setTitle(buttonTitle, for: .normal)
+        startStopButton.setTitle(buttonTitle, for: .normal)
         slider.isEnabled = timerStarted ? shouldEnableSlider : timerStarted
         timerStarted = !timerStarted
     }
@@ -85,15 +85,12 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: ACCountDownLabelDelegate {
 
     func ACCountDownFinished() {
-        stop()
-
-        AudioPlayerController.shared.play()
-
-        let alert = UIAlertController(title: "È pronto!", message: "Spegni il fuoco sotto la\nPentola a Pressione!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay! 😋", style: .default, handler: { _ in
-            AudioPlayerController.shared.stop()
+        startStop()
+        if NotificationsController.shared.notifiedLocally {
+            NotificationsController.shared.removeLocalNotification()
             self.navigationController?.popViewController(animated: true)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        } else {
+            NotificationsController.shared.notifyWithAlert(usingViewController: self)
+        }
     }
 }

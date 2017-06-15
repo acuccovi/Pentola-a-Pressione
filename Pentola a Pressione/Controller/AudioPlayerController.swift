@@ -13,6 +13,7 @@ import MobileCoreServices
 class AudioPlayerController: NSObject {
 
     private var avPlayer = AVPlayer()
+    private(set) var notificationAudioFile = ""
 
     //singleton, we need only one instance of AudioPlayerController
     static let shared: AudioPlayerController = {
@@ -39,6 +40,7 @@ class AudioPlayerController: NSObject {
     // MARK: - public func
     public func setAudioUrl(_ audioUrl: URL) {
         avPlayer = AVPlayer(url: audioUrl)
+        notificationAudioFile = "\(audioUrl.deletingLastPathComponent().lastPathComponent)/\(audioUrl.lastPathComponent)"
     }
 
     public func getAudioFiles() -> [URL] {

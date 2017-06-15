@@ -17,6 +17,7 @@ class ACCountDownLabel: UILabel {
     private var timer = Timer()
     private var timeCount = TimeInterval()
     private var startTime = TimeInterval()
+    private(set) var remainingTime: TimeInterval?
     var delegate: ACCountDownLabelDelegate?
 
     func start() {
@@ -30,7 +31,8 @@ class ACCountDownLabel: UILabel {
                     self.stop()
                     self.delegate?.ACCountDownFinished()
                 }
-                self.text = self.timeString(time: self.timeCount - elapsedTime)
+                self.remainingTime = self.timeCount - elapsedTime
+                self.text = self.timeString(time: self.remainingTime!)
             })
         }
     }

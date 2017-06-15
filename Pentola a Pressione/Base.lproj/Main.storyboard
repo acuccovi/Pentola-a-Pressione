@@ -114,11 +114,11 @@
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ss6-ZG-yQD">
                                 <rect key="frame" x="16" y="482" width="288" height="66"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <action selector="startStopTapped:forEvent:" destination="fGR-QN-f6E" eventType="touchUpInside" id="LMK-XC-1rc"/>
+                                    <action selector="startStopButtonTapped:forEvent:" destination="fGR-QN-f6E" eventType="touchUpInside" id="mhK-m9-iGM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -127,7 +127,7 @@
                     <connections>
                         <outlet property="label" destination="kC2-lI-PVc" id="XSq-2i-g0a"/>
                         <outlet property="slider" destination="lly-rF-ocF" id="AWG-h5-Axs"/>
-                        <outlet property="startStop" destination="Ss6-ZG-yQD" id="DtY-Pd-Q8g"/>
+                        <outlet property="startStopButton" destination="Ss6-ZG-yQD" id="25A-m0-H7m"/>
                         <outlet property="titleLabel" destination="V3G-pS-yKD" id="EXC-R2-ixF"/>
                     </connections>
                 </viewController>
